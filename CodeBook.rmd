@@ -1,0 +1,60 @@
+---
+title: "CodeBook"
+author: "Paul G. Smith"
+date: "December 25, 2015"
+---
+
+Code Book
+========
+This CodeBook documents the variable names and descriptions for the `TidyDataSet` created as part of my course project for Coursera Getting and Cleaning Data course (getdata-035), in December, 2015.
+
+Just a quick overall comment here: I chose to output my data in a very narrow format. The **cleanDataSet contains 679,734 rows**; one for each combination of dimension (66) and observation (10,299). The **TidyDataSet contains 11,880 rows**; one for each combination of activty(6) * subject (30) * dimension (66).
+
+*I also added variables that "deconstruct" the dimension names (i.e., fBodyAcc-mean()-X) into component 7 component variables (i.e., featureDomain, featureInstrument, etc.)*
+
+Variable Names and Descriptions
+------------------------------
+
+Variable Name       | Description
+--------------------|------------
+activity            | Factor:  Activities performed by the subjects in this study (6 levels)
+subject             | Integer: identifier of the subject who performed the activities.
+feature             | Factor:  variable name from study (un-deconstructed)
+featureDomain       | Factor:  indicates time or Freq(uency) domain signal for variable
+featureAcceleration | Factor:  indicates acceleration signal (Body or Gravity) for variable
+featureInstrument   | Factor:  indicates measuring instrument (Accelerometer or Gyroscope) for variable
+featureJerk         | Factor:  indicates Jerk signal for variable
+featMagnitude       | Factor:  indicates signal magnitude for the variable
+featAxis            | Factor:  indicates axial signal direction (X, Y, Z) for the variable
+featureMeasurement  | Factor:  inicates type of measurement (Mean or SD)
+Count               | Integer: count of data points used to compute `average`
+Average             | Integer: Average of each variable for each activity and each subject
+
+Dataset structure
+-----------------
+
+```{r}
+str(TidyDataSet)
+```
+
+List the key variables in the data table
+----------------------------------------
+
+```{r}
+key(TidyDataSet)
+```
+
+Show a few rows of the dataset
+------------------------------
+
+```{r}
+TidyDataSet
+```
+
+Summary of variables
+--------------------
+
+```{r}
+summary(TidyDataSet)
+```
+
